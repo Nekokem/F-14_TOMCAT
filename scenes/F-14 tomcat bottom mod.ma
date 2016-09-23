@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: F-14 tomcat bottom mod.ma
-//Last modified: Fri, Sep 23, 2016 02:24:18 PM
+//Last modified: Fri, Sep 23, 2016 02:25:24 PM
 //Codeset: UTF-8
 requires maya "2017";
 currentUnit -l centimeter -a degree -t film;
@@ -13,8 +13,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "6EFBF1A8-6F46-4947-D583-04BCEB443510";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -17.123715325627671 81.027466175166722 260.19327371675411 ;
-	setAttr ".r" -type "double3" 1075.4616472209871 -366.19999999964841 0 ;
+	setAttr ".t" -type "double3" 192.38678014286421 -130.05302675041898 -57.289790691469875 ;
+	setAttr ".r" -type "double3" 1125.2616472223222 -253.80000000010929 0 ;
 	setAttr ".rp" -type "double3" -1.4210854715202004e-14 0 0 ;
 	setAttr ".rpt" -type "double3" 1.9617232049294582e-14 3.6349951953978243e-15 -4.7715079373580256e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -94,7 +94,9 @@ createNode mesh -n "pCubeShape2" -p "pCube2";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 14 ".pt";
+	setAttr -s 16 ".pt";
+	setAttr ".pt[157]" -type "float3" 0 -0.081914857 0 ;
+	setAttr ".pt[251]" -type "float3" 0 -0.081914857 0 ;
 	setAttr ".pt[253]" -type "float3" 0.1122664 0 0 ;
 	setAttr ".pt[254]" -type "float3" 0.17644274 2.9802322e-08 0 ;
 	setAttr ".pt[257]" -type "float3" 0.033560414 0 0 ;
