@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: F-14 TOMCAT 2.1.ma
-//Last modified: Tue, Sep 27, 2016 05:51:16 PM
+//Last modified: Tue, Sep 27, 2016 05:58:13 PM
 //Codeset: UTF-8
 requires maya "2017";
 currentUnit -l centimeter -a degree -t film;
@@ -13,15 +13,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "6EFBF1A8-6F46-4947-D583-04BCEB443510";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 9.3324564279025424 247.24936199688926 205.27908872421614 ;
-	setAttr ".r" -type "double3" 1035.2616472212094 -366.19999999990398 0 ;
+	setAttr ".t" -type "double3" 457.98813912438987 448.03725462146008 233.15615491597322 ;
+	setAttr ".r" -type "double3" 1046.6616472209835 -303.40000000004989 5.7777764958102481e-15 ;
 	setAttr ".rp" -type "double3" -1.4210854715202004e-14 0 0 ;
 	setAttr ".rpt" -type "double3" 1.9617232049294582e-14 3.6349951953978243e-15 -4.7715079373580256e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "15667A4C-FA4F-B39E-452D-BFB97133EE81";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 307.60622360197624;
+	setAttr ".coi" 821.90223544722289;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -8746,6 +8746,7 @@ createNode mesh -n "polySurface10Shape" -p "|polySurface10";
 	setAttr -s 6 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 1.5166256882557962 0.50000002980232239 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -8818,6 +8819,7 @@ createNode mesh -n "polySurface19Shape" -p "|polySurface19";
 	setAttr -s 6 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 1.5317583289565901 -0.37460945977342852 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -8899,7 +8901,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n"
 		+ "                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n"
 		+ "                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"visorPanel\" -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
-		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"createNodePanel\" -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"polyTexturePlacementPanel\" -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n"
+		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"createNodePanel\" -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"polyTexturePlacementPanel\" -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\tif ($useSceneConfig) {\n\t\tscriptedPanel -e -to $panelName;\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n"
 		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"renderWindowPanel\" -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\tshapePanel -unParent -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels ;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\tposePanel -unParent -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels ;\n"
 		+ "\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"dynRelEdPanel\" -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"relationshipPanel\" -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels `;\n"
 		+ "\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"referenceEditorPanel\" -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"componentEditorPanel\" -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels `;\n"
@@ -15534,6 +15536,60 @@ createNode groupParts -n "groupParts334";
 	rename -uid "0EE581F1-F947-0417-6086-088B07A74EC9";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:66]";
+createNode polyPlanarProj -n "polyPlanarProj1";
+	rename -uid "DC99AC43-C040-5917-B6ED-58B4D5050C74";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:47]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" 3.814697265625e-06 37.72266933728541 -80.561985015869141 ;
+	setAttr ".ro" -type "double3" -90 0 0 ;
+	setAttr ".ps" -type "double2" 127.85417938232422 57.274391174316406 ;
+	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyTweakUV -n "polyTweakUV69";
+	rename -uid "697B1DC8-AA48-29B4-3D5A-CD89C473B826";
+	setAttr ".uopa" yes;
+	setAttr -s 56 ".uvtk[0:55]" -type "float2" 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643 0 1.016625643
+		 0;
+createNode polyPlanarProj -n "polyPlanarProj2";
+	rename -uid "112D4E76-EB40-7B82-EC2F-94859F2D404F";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:43]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" 0 54.209938049316406 -64.418584848762904 ;
+	setAttr ".ps" -type "double2" 60.475215160741236 54.20383663697141 ;
+	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyTweakUV -n "polyTweakUV70";
+	rename -uid "2F3680B8-9047-7043-16E3-71BB2229DC59";
+	setAttr ".uopa" yes;
+	setAttr -s 60 ".uvtk[0:59]" -type "float2" 1.031758308 -0.87460941 1.031758308
+		 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941
+		 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460947 1.031758308
+		 -0.87460947 1.031758308 -0.87460947 1.031758308 -0.87460941 1.031758308 -0.87460947
+		 1.031758308 -0.87460947 1.031758308 -0.87460947 1.031758308 -0.87460947 1.031758308
+		 -0.87460947 1.031758308 -0.87460947 1.031758308 -0.87460947 1.031758308 -0.87460947
+		 1.031758308 -0.87460947 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308
+		 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941
+		 1.031758308 -0.87460941 1.031758308 -0.87460947 1.031758308 -0.87460947 1.031758308
+		 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941
+		 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308
+		 -0.87460947 1.031758308 -0.87460947 1.031758308 -0.87460947 1.031758308 -0.87460947
+		 1.031758308 -0.87460947 1.031758308 -0.87460941 1.031758308 -0.87460947 1.031758308
+		 -0.87460947 1.031758308 -0.87460941 1.031758308 -0.87460947 1.031758308 -0.87460947
+		 1.031758308 -0.87460947 1.031758308 -0.87460947 1.031758308 -0.87460947 1.031758308
+		 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941
+		 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308 -0.87460941 1.031758308
+		 -0.87460947 1.031758308 -0.87460947 1.031758308 -0.87460941;
 select -ne :time1;
 	setAttr ".o" 80;
 	setAttr ".unw" 80;
@@ -16246,13 +16302,14 @@ connectAttr ":initialShadingGroup.mwc" "polySurface4Shape.iog.og[3].gco";
 connectAttr "groupParts143.og" "pTorus8Shape.i";
 connectAttr "groupId156.id" "pTorus8Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pTorus8Shape.iog.og[0].gco";
-connectAttr "groupParts197.og" "polySurface10Shape.i";
+connectAttr "polyTweakUV69.out" "polySurface10Shape.i";
 connectAttr "groupId208.id" "polySurface10Shape.iog.og[0].gid";
 connectAttr "set7.mwc" "polySurface10Shape.iog.og[0].gco";
 connectAttr "groupId209.id" "polySurface10Shape.iog.og[1].gid";
 connectAttr "set8.mwc" "polySurface10Shape.iog.og[1].gco";
 connectAttr "groupId210.id" "polySurface10Shape.iog.og[2].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurface10Shape.iog.og[2].gco";
+connectAttr "polyTweakUV69.uvtk[0]" "polySurface10Shape.uvst[0].uvtw";
 connectAttr "groupParts320.og" "polySurfaceShape21.i";
 connectAttr "groupId331.id" "polySurfaceShape21.iog.og[0].gid";
 connectAttr "set7.mwc" "polySurfaceShape21.iog.og[0].gco";
@@ -16274,13 +16331,14 @@ connectAttr "groupId257.id" "polySurface12Shape.iog.og[1].gid";
 connectAttr "set8.mwc" "polySurface12Shape.iog.og[1].gco";
 connectAttr "groupId258.id" "polySurface12Shape.iog.og[2].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurface12Shape.iog.og[2].gco";
-connectAttr "groupParts326.og" "polySurface19Shape.i";
+connectAttr "polyTweakUV70.out" "polySurface19Shape.i";
 connectAttr "groupId337.id" "polySurface19Shape.iog.og[0].gid";
 connectAttr "set7.mwc" "polySurface19Shape.iog.og[0].gco";
 connectAttr "groupId338.id" "polySurface19Shape.iog.og[1].gid";
 connectAttr "set8.mwc" "polySurface19Shape.iog.og[1].gco";
 connectAttr "groupId339.id" "polySurface19Shape.iog.og[2].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurface19Shape.iog.og[2].gco";
+connectAttr "polyTweakUV70.uvtk[0]" "polySurface19Shape.uvst[0].uvtw";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -18111,6 +18169,12 @@ connectAttr "groupParts332.og" "groupParts333.ig";
 connectAttr "groupId346.id" "groupParts333.gi";
 connectAttr "groupParts333.og" "groupParts334.ig";
 connectAttr "groupId347.id" "groupParts334.gi";
+connectAttr "groupParts197.og" "polyPlanarProj1.ip";
+connectAttr "polySurface10Shape.wm" "polyPlanarProj1.mp";
+connectAttr "polyPlanarProj1.out" "polyTweakUV69.ip";
+connectAttr "groupParts326.og" "polyPlanarProj2.ip";
+connectAttr "polySurface19Shape.wm" "polyPlanarProj2.mp";
+connectAttr "polyPlanarProj2.out" "polyTweakUV70.ip";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape2.iog.og[36]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
