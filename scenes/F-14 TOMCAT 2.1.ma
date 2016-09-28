@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: F-14 TOMCAT 2.1.ma
-//Last modified: Tue, Sep 27, 2016 06:07:34 PM
+//Last modified: Tue, Sep 27, 2016 06:13:51 PM
 //Codeset: UTF-8
 requires maya "2017";
 currentUnit -l centimeter -a degree -t film;
@@ -13,15 +13,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "6EFBF1A8-6F46-4947-D583-04BCEB443510";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 143.68138086033969 94.338336982146586 192.49718078994414 ;
-	setAttr ".r" -type "double3" 1065.2616472209334 -314.60000000002185 0 ;
+	setAttr ".t" -type "double3" 501.17560438917081 42.135841176150336 16.860888161155003 ;
+	setAttr ".r" -type "double3" 1074.8616472209012 -281.80000000000138 0 ;
 	setAttr ".rp" -type "double3" -1.4210854715202004e-14 0 0 ;
 	setAttr ".rpt" -type "double3" 1.9617232049294582e-14 3.6349951953978243e-15 -4.7715079373580256e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "15667A4C-FA4F-B39E-452D-BFB97133EE81";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 374.42093784284486;
+	setAttr ".coi" 554.74084563140343;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2119,6 +2119,7 @@ createNode mesh -n "polySurfaceShape4" -p "polySurface2";
 	setAttr -s 34 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 2.9770120137255751 0.48404845595359802 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -15645,6 +15646,27 @@ createNode polyTweakUV -n "polyTweakUV71";
 		 0 1.86953175 0 1.86953175 0;
 	setAttr ".uvtk[250:253]" 1.86953175 0 1.86953175 0 1.86953175 0 1.86953175
 		 0;
+createNode polyPlanarProj -n "polyPlanarProj3";
+	rename -uid "52381DF9-0547-8D00-3BDB-AB8B5E3320D2";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:31]";
+	setAttr ".ix" -type "matrix" 44.553895034825906 0 0 0 0 22.687436280109658 0 0 0 0 164.20104592528619 0
+		 0 28.502494168014813 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" 0.0040683746337890625 54.834721390532472 31.04085145255538 ;
+	setAttr ".ro" -type "double3" -68.863761089638004 0 0 ;
+	setAttr ".ps" -type "double2" 25.452120184579496 45.72994019190137 ;
+	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyTweakUV -n "polyTweakUV72";
+	rename -uid "07316EAD-7C44-8121-913D-958E3B989307";
+	setAttr ".uopa" yes;
+	setAttr -s 41 ".uvtk[0:40]" -type "float2" 2.47701216 0 2.47701216 0
+		 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216
+		 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216
+		 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216
+		 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216
+		 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216
+		 0 2.47701216 0 2.47701216 0 2.47701216 0 2.47701216 0;
 select -ne :time1;
 	setAttr ".o" 80;
 	setAttr ".unw" 80;
@@ -16233,7 +16255,7 @@ connectAttr "groupId34.id" "polySurfaceShape3.iog.og[15].gid";
 connectAttr "set18.mwc" "polySurfaceShape3.iog.og[15].gco";
 connectAttr "groupId35.id" "polySurfaceShape3.iog.og[16].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape3.iog.og[16].gco";
-connectAttr "groupParts51.og" "polySurfaceShape4.i";
+connectAttr "polyTweakUV72.out" "polySurfaceShape4.i";
 connectAttr "groupId36.id" "polySurfaceShape4.iog.og[0].gid";
 connectAttr "set1.mwc" "polySurfaceShape4.iog.og[0].gco";
 connectAttr "groupId37.id" "polySurfaceShape4.iog.og[1].gid";
@@ -16268,6 +16290,7 @@ connectAttr "groupId51.id" "polySurfaceShape4.iog.og[15].gid";
 connectAttr "set18.mwc" "polySurfaceShape4.iog.og[15].gco";
 connectAttr "groupId52.id" "polySurfaceShape4.iog.og[16].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape4.iog.og[16].gco";
+connectAttr "polyTweakUV72.uvtk[0]" "polySurfaceShape4.uvst[0].uvtw";
 connectAttr "groupParts17.og" "pCubeShape2.i";
 connectAttr "groupId1.id" "pCubeShape2.iog.og[0].gid";
 connectAttr "set1.mwc" "pCubeShape2.iog.og[0].gco";
@@ -18234,6 +18257,9 @@ connectAttr "polyPlanarProj2.out" "polyTweakUV70.ip";
 connectAttr "groupParts260.og" "polyCylProj1.ip";
 connectAttr "polySurfaceShape16.wm" "polyCylProj1.mp";
 connectAttr "polyCylProj1.out" "polyTweakUV71.ip";
+connectAttr "groupParts51.og" "polyPlanarProj3.ip";
+connectAttr "polySurfaceShape4.wm" "polyPlanarProj3.mp";
+connectAttr "polyPlanarProj3.out" "polyTweakUV72.ip";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape2.iog.og[36]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
