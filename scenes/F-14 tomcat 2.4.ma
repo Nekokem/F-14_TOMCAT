@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: F-14 tomcat 2.4.ma
-//Last modified: Mon, Oct 10, 2016 10:18:07 AM
+//Last modified: Mon, Oct 10, 2016 10:23:56 AM
 //Codeset: UTF-8
 requires maya "2017";
 requires "stereoCamera" "10.0";
@@ -13,19 +13,19 @@ fileInfo "osv" "Mac OS X 10.11.6";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "6EFBF1A8-6F46-4947-D583-04BCEB443510";
-	setAttr ".t" -type "double3" 508.60751828295383 250.37241781685427 355.20369139186505 ;
-	setAttr ".r" -type "double3" -20.138352772746011 409.00000000018741 -2.4239851453378189e-15 ;
+	setAttr ".t" -type "double3" 127.17027733584283 59.213477331933618 31.893851182563168 ;
+	setAttr ".r" -type "double3" -19.538352774184009 1172.9999999999377 0 ;
 	setAttr ".rp" -type "double3" -2.8421709430404007e-14 2.8421709430404007e-14 5.6843418860808015e-14 ;
 	setAttr ".rpt" -type "double3" 5.4230158936271338e-14 3.9677534848985608e-14 -7.9118028391797194e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "15667A4C-FA4F-B39E-452D-BFB97133EE81";
 	setAttr -k off ".v";
 	setAttr ".fl" 46.198644535929915;
-	setAttr ".coi" 631.20225456052685;
+	setAttr ".coi" 135.01220996715341;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 61.356753349304199 33.056910514831543 -33.585467040538788 ;
+	setAttr ".tp" -type "double3" 0.10673778472730924 14.06029466142108 38.552969118140538 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -5276,6 +5276,8 @@ createNode mesh -n "back_right_landing_gear_bodyShape" -p "back_right_landing_ge
 createNode transform -n "back_right_extension" -p "back_landing_gear";
 	rename -uid "6AAB8CD5-EF47-DDAF-C006-A2B79B1A0F32";
 	setAttr ".t" -type "double3" -39.869009671572186 -7.4831424529735493 0 ;
+	setAttr ".rp" -type "double3" 24.041738481263614 8.4698925788585591 -12.984905242919922 ;
+	setAttr ".sp" -type "double3" 24.041738481263614 8.4698925788585591 -12.984905242919922 ;
 createNode mesh -n "back_right_extension" -p "|back_landing_gear|back_right_extension";
 	rename -uid "1E0079A4-8141-8B75-0153-7A80E4350966";
 	setAttr -k off ".v";
@@ -6862,6 +6864,8 @@ createNode mesh -n "back_left_landing_gear_bodyShape2" -p "back_left_landing_gea
 createNode transform -n "back_left_extension" -p "back_landing_gear";
 	rename -uid "B961246D-9F42-BD30-C38E-82B8ED1E67F0";
 	setAttr ".t" -type "double3" -8.1883120534359612 -7.4756144636977782 2.5243548967072378e-29 ;
+	setAttr ".rp" -type "double3" 24.2421009905195 8.6294235668121146 -13.03756046295166 ;
+	setAttr ".sp" -type "double3" 24.2421009905195 8.6294235668121146 -13.03756046295166 ;
 createNode mesh -n "back_left_extension" -p "|back_landing_gear|back_left_extension";
 	rename -uid "49071310-D443-2D15-4959-4F82DB3001D1";
 	setAttr -k off ".v";
@@ -8327,6 +8331,8 @@ createNode mesh -n "front_left_wheel" -p "|front_landing_gear|front_left_wheel";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "front_extension" -p "front_landing_gear";
 	rename -uid "978AF4A7-D647-9DDB-CC99-1AB09D999F6F";
+	setAttr ".rp" -type "double3" 0.07658483160389154 7.4356882534843436 45.96353846677291 ;
+	setAttr ".sp" -type "double3" 0.07658483160389154 7.4356882534843436 45.96353846677291 ;
 createNode mesh -n "front_extension" -p "|front_landing_gear|front_extension";
 	rename -uid "5BEE1DAB-CD49-8FB8-214C-F3B026E7530B";
 	setAttr -k off ".v";
